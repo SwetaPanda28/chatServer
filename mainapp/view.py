@@ -6,10 +6,10 @@ from .serializers import *
 
 
 class UserModelViewSet(viewsets.ModelViewSet):
-    serializer_class=UserModel
+    serializer_class=UsermodelSerializer
     queryset=User.objects.all()
 
 
 class MsgViewSet(viewsets.ModelViewSet):
-    serializer_class=Msg
-    queryset=User.objects.all()
+    serializer_class=MsgSerializer
+    queryset=Msg.objects.all()
