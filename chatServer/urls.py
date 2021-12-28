@@ -31,7 +31,7 @@ router.register('Msg',MsgViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')), 
-    path('',include(router.urls)),
+    #path('',include(router.urls)),
     path('', TemplateView.as_view(template_name="index.html")),
     path('accounts/', include('allauth.urls')),
     path('logout', LogoutView.as_view()),
