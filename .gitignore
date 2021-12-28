@@ -82,8 +82,11 @@ target/
 *.log
 *.pot
 */*.pyc
-__pycache__/
+*/__pycache__/
+*/__pycache__/*
+*/chatServer/__pycache__/*
 local_settings.py
-
+*/migrations/
+*/migrations/*
 .env
 db.sqlite3
