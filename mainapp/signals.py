@@ -6,4 +6,4 @@ from . import models
 @receiver(post_save,sender=User)
 def createUserModel(instance,created,**kwargs):
     if(created):
-        models.UserModel.objects.create(authUser=instance)
+        models.User.objects.create(authUser=instance)

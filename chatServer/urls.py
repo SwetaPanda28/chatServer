@@ -18,7 +18,7 @@ from django.urls import path
 from django.contrib import admin
 from django.urls import path,include
 from rest_framework.routers import DefaultRouter
-from mainapp.models import  UserModel
+from mainapp.models import  User
 from mainapp.view import UserModelViewSet,MsgViewSet
 from django.urls import path, include
 from django.views.generic import TemplateView

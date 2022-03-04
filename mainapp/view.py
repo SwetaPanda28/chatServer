@@ -12,4 +12,4 @@ class UserModelViewSet(viewsets.ModelViewSet):
 
 class MsgViewSet(viewsets.ModelViewSet):
     serializer_class=MsgSerializer
-    queryset=Msg.objects.all()
+    queryset=Message.objects.all()

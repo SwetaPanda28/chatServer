@@ -1,7 +1,7 @@
 from django.contrib import admin
 
-from mainapp.models import Msg, UserModel
+from mainapp.models import Message, User
 
 # Register your models here.
-admin.site.register(UserModel)
-admin.site.register(Msg)
+admin.site.register(User)
+admin.site.register(Message)

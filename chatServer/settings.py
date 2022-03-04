@@ -156,6 +156,7 @@ SITE_ID = 3
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+AUTH_USER_MODEL = 'mainapp.User'
 
 # CLIENT_SECRET = "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"
 # CLIENT_ID = '654513543295-cskl0co190u6qfrro5dg1iiruo4bdks4.apps.googleusercontent.com'

@@ -1,24 +1,26 @@
+from distutils.command.upload import upload
+from email import message
+from email.mime import image
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 from django.db.models.deletion import CASCADE
 from phonenumber_field.modelfields import PhoneNumberField
+from uuid import uuid4
 
+class User(AbstractUser):
+    id=models.UUIDField(default=uuid4,primary_key=True)
+    pu=models.TextField()
+    pr=models.TextField()
+    dp=models.ImageField()
+    nprod=models.TextField()
+    
+class Message(models.Model):
+    text=models.TextField()
+    id=models.UUIDField(default=uuid4,primary_key=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
-class UserModel(models.Model):
-    privateKey=models.CharField(max_length=100,blank=True)
-    publicKey=models.CharField(max_length=100,blank=True)
-    masterpassword=models.CharField(max_length=100,blank=True)
-    image_field = models.ImageField(null=True,blank=True)
-    phoneNumber = PhoneNumberField(unique = True, null = True,blank=True)
-    authUser = models.ForeignKey(User,on_delete=models.CASCADE,null=True)
-    detailsFilled=models.BooleanField(default=False,blank=True)
+class Image(models.Model):
+    img=models.ImageField()
+    message=models.ForeignKey(Message, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return f"{self.authUser.email} : {self.authUser.username}"
-
-class Msg(models.Model):
-    msg=models.CharField(max_length=10000)
-    sender=models.ForeignKey(UserModel,on_delete=models.CASCADE,related_name="sender")
-    receiver=models.ForeignKey(UserModel,on_delete=models.CASCADE,related_name="reciever")
-        
     
