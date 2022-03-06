@@ -8,7 +8,7 @@ chatServer/__pycache__
 # Icon must end with two \r
 Icon
 .pyc
-
+*/migrations/*
 # Thumbnails
 ._*
 
