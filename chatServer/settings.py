@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "allauth.socialaccount",
     "allauth.socialaccount.providers.google",
     "django.contrib.sites",
+    "channels",
 ]
 
 MIDDLEWARE = [
@@ -77,6 +78,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "chatServer.wsgi.application"
+ASGI_APPLICATION = "chatServer.asgi.application"
 
 
 # Database
