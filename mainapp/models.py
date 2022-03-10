@@ -14,7 +14,12 @@ class User(AbstractUser):
 class Message(models.Model):
     text = models.TextField()
     id = models.UUIDField(default=uuid4, primary_key=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    touser = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="recieved_messages", null=True
+    )
+    fromuser = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="sent_messages", null=True
+    )
 
 
 class Image(models.Model):
